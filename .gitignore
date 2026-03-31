@@ -15,6 +15,7 @@
 
 # next.js
 /.next/
+/.next.backup*/
 /out/
 
 # production
@@ -23,6 +24,14 @@
 # misc
 .DS_Store
 *.pem
+AGENTS.md
+CLAUDE.md
+CONTEXT.md
+HANDOVER-*.md
+Inventory-19Mar.xlsx
+Publisher Distributor Mapping.xlsx
+sales_by_product 1Jan-19Mar.xlsx
+analyze-publishers.js
 
 # debug
 npm-debug.log*
@@ -32,6 +41,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +49,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# catalog data
+/data/*
+!/data/master-catalog.json
+!/data/imprint-mappings.json
+/data/order-drafts/
+/data/queue-logs/
+/data/catalog-normalization-report.json
+/data/catalog-queue-final-report.json
+/data/publisher-distributor-coverage.csv
+/data/publisher-distributor-coverage.json
+/data/analyze-unknown.js
+/data/analyze-unknown-deep.js

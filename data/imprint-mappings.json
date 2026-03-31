@@ -1,0 +1,872 @@
+[
+  {
+    "imprint": "Yearling",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH children's paperback imprint"
+  },
+  {
+    "imprint": "Dragonfly Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Children's Books paperback imprint"
+  },
+  {
+    "imprint": "DK",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Dorling Kindersley, part of PRH worldwide"
+  },
+  {
+    "imprint": "Grosset & Dunlap",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Penguin Young Readers imprint for ages 0-12"
+  },
+  {
+    "imprint": "Random House Books for Young Readers",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Core PRH children's imprint"
+  },
+  {
+    "imprint": "Ladybird Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH UK children's imprint"
+  },
+  {
+    "imprint": "Ember",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Children's Books YA paperback imprint"
+  },
+  {
+    "imprint": "Crown",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Crown Publishing Group, division of PRH"
+  },
+  {
+    "imprint": "Ten Speed Press",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Part of Crown Publishing Group within PRH"
+  },
+  {
+    "imprint": "Arrow",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH UK paperback imprint"
+  },
+  {
+    "imprint": "Corgi",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Transworld (PRH UK) paperback imprint"
+  },
+  {
+    "imprint": "Anchor",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Knopf Doubleday (PRH) paperback imprint"
+  },
+  {
+    "imprint": "Ballantine",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Publishing Group imprint"
+  },
+  {
+    "imprint": "Pantheon",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Knopf Doubleday (PRH)"
+  },
+  {
+    "imprint": "Schocken",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Knopf Doubleday (PRH)"
+  },
+  {
+    "imprint": "Convergent Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Publishing Group imprint"
+  },
+  {
+    "imprint": "Dial Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Penguin Young Readers imprint"
+  },
+  {
+    "imprint": "Frederick Warne Publishers",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH imprint, home of Peter Rabbit"
+  },
+  {
+    "imprint": "Bodley Head Childrens",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Vintage Publishing (PRH UK)"
+  },
+  {
+    "imprint": "Red Fox",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH UK children's paperback imprint"
+  },
+  {
+    "imprint": "Red Fox Picture Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Sub-imprint of Red Fox (PRH UK)"
+  },
+  {
+    "imprint": "Red Fox Funny Stories",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Sub-imprint of Red Fox (PRH UK)"
+  },
+  {
+    "imprint": "Jonathan Cape Children's",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Vintage Publishing (PRH UK)"
+  },
+  {
+    "imprint": "Speak",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Penguin Young Readers YA paperback imprint"
+  },
+  {
+    "imprint": "Puffin Classics",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Sub-line of Puffin (PRH)"
+  },
+  {
+    "imprint": "Doubleday Books for Young Readers",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Knopf Doubleday (PRH) children's imprint"
+  },
+  {
+    "imprint": "Knopf Books for Young Readers",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Knopf Doubleday (PRH) children's imprint"
+  },
+  {
+    "imprint": "Anne Schwartz Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Children's Books imprint"
+  },
+  {
+    "imprint": "Schwartz & Wade",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Children's Books imprint"
+  },
+  {
+    "imprint": "Random House Studio",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Random House Children's Books imprint"
+  },
+  {
+    "imprint": "Random House Graphic",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH kids/teen graphic novel imprint"
+  },
+  {
+    "imprint": "Golden Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Little Golden Books, acquired by Random House in 2001"
+  },
+  {
+    "imprint": "Tundra Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH Canada children's imprint"
+  },
+  {
+    "imprint": "Windmill Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Cornerstone (PRH UK) paperback imprint"
+  },
+  {
+    "imprint": "Particular Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Penguin Press (PRH UK) nonfiction imprint"
+  },
+  {
+    "imprint": "Rider",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Ebury Publishing (PRH UK) imprint"
+  },
+  {
+    "imprint": "Tbs/gbs/transworld",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Transworld is a division of PRH UK"
+  },
+  {
+    "imprint": "India Viking",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Viking is PRH; India Viking is PRH India"
+  },
+  {
+    "imprint": "India Puffin Young Zubaan",
+    "parent": "Penguin Random House",
+    "confidence": "medium",
+    "note": "Puffin India (PRH India) co-published series with Zubaan"
+  },
+  {
+    "imprint": "Duckbill Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "PRH India acquired Duckbill in 2019"
+  },
+  {
+    "imprint": "Hook Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Series under Duckbill (PRH India)"
+  },
+  {
+    "imprint": "Little Tiger",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Little Tiger Group acquired by PRH in 2019"
+  },
+  {
+    "imprint": "Caterpillar Books",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Imprint of Little Tiger Group (PRH since 2019)"
+  },
+  {
+    "imprint": "360 Degrees",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Imprint of Little Tiger Group (PRH since 2019)"
+  },
+  {
+    "imprint": "Stripes Publishers U.S.A.",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "Stripes Publishing, imprint of Little Tiger Group (PRH since 2019)"
+  },
+  {
+    "imprint": "Tiger Tales",
+    "parent": "Penguin Random House",
+    "confidence": "high",
+    "note": "US imprint of Little Tiger Group (PRH since 2019)"
+  },
+  {
+    "imprint": "Collins",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins UK imprint"
+  },
+  {
+    "imprint": "Collins India",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins India imprint"
+  },
+  {
+    "imprint": "Harper",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Core HarperCollins US imprint"
+  },
+  {
+    "imprint": "Harper India",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins India imprint"
+  },
+  {
+    "imprint": "Harper Kids",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins India children's imprint"
+  },
+  {
+    "imprint": "Harperfestival",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins US children's imprint"
+  },
+  {
+    "imprint": "Harperteen",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins US YA imprint"
+  },
+  {
+    "imprint": "Harperalley",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins graphic novel imprint"
+  },
+  {
+    "imprint": "Harperpress",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins UK imprint"
+  },
+  {
+    "imprint": "Harper & Row Limited",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Legacy name; merged to form HarperCollins in 1990"
+  },
+  {
+    "imprint": "Greenwillow Books",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins Children's Books imprint"
+  },
+  {
+    "imprint": "Balzer + Bray",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins Children's Books imprint"
+  },
+  {
+    "imprint": "Quill Tree Books",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins Children's Books imprint"
+  },
+  {
+    "imprint": "Katherine Tegen Books",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins Children's Books imprint"
+  },
+  {
+    "imprint": "Amistad",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins imprint"
+  },
+  {
+    "imprint": "Borough Press",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins UK fiction imprint"
+  },
+  {
+    "imprint": "Voyager",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins sci-fi/fantasy imprint"
+  },
+  {
+    "imprint": "Pavilion",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Acquired by HarperCollins in 2021"
+  },
+  {
+    "imprint": "Barrington Stoke",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Acquired by HarperCollins in 2023"
+  },
+  {
+    "imprint": "Egmont",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Egmont Books UK sold to HarperCollins in 2020, rebranded as Farshore"
+  },
+  {
+    "imprint": "Farshore",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Formerly Egmont Books UK, rebranded 2021 after HarperCollins acquisition"
+  },
+  {
+    "imprint": "Dean Children's Books",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Formerly Egmont imprint, now under Farshore (HarperCollins)"
+  },
+  {
+    "imprint": "Mammoth",
+    "parent": "HarperCollins",
+    "confidence": "medium",
+    "note": "Legacy Egmont imprint, transferred to HarperCollins via Farshore"
+  },
+  {
+    "imprint": "Houghton Mifflin Harcourt",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HarperCollins acquired HMH trade publishing in 2021"
+  },
+  {
+    "imprint": "Clarion Books",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "Formerly HMH imprint, now HarperCollins post-2021 acquisition"
+  },
+  {
+    "imprint": "Etch",
+    "parent": "HarperCollins",
+    "confidence": "high",
+    "note": "HMH graphic novel imprint, folded into HarperAlley after acquisition"
+  },
+  {
+    "imprint": "Orion Children's Books",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Orion Publishing Group (Hachette UK)"
+  },
+  {
+    "imprint": "Orchard Books",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hachette Children's Group imprint"
+  },
+  {
+    "imprint": "Franklin Watts",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hachette Children's Group nonfiction imprint"
+  },
+  {
+    "imprint": "Wayland",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hachette Children's Group nonfiction imprint"
+  },
+  {
+    "imprint": "Hodder & Stoughton",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hachette UK division"
+  },
+  {
+    "imprint": "Sceptre",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hodder & Stoughton (Hachette UK) imprint"
+  },
+  {
+    "imprint": "Wildfire",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hodder & Stoughton (Hachette UK) fiction imprint"
+  },
+  {
+    "imprint": "Weidenfeld & Nicholson",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Orion Publishing Group (Hachette UK)"
+  },
+  {
+    "imprint": "W&n",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Abbreviation for Weidenfeld & Nicholson (Hachette UK)"
+  },
+  {
+    "imprint": "Gollancz",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Orion Publishing Group (Hachette UK) sci-fi imprint"
+  },
+  {
+    "imprint": "John Murray Press",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Hachette UK division"
+  },
+  {
+    "imprint": "Two Roads",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "John Murray Press (Hachette UK) imprint"
+  },
+  {
+    "imprint": "Little, Brown Books for Young Readers",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette) children's division"
+  },
+  {
+    "imprint": "Virago Press",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette UK)"
+  },
+  {
+    "imprint": "Abacus",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette UK)"
+  },
+  {
+    "imprint": "Atom Books",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette UK) YA imprint"
+  },
+  {
+    "imprint": "Fleet",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette UK)"
+  },
+  {
+    "imprint": "Constable",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Little, Brown Book Group (Hachette UK)"
+  },
+  {
+    "imprint": "Black Dog & Leventhal",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Workman Publishing (Hachette) imprint"
+  },
+  {
+    "imprint": "Workman Publishing",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Acquired by Hachette Book Group in 2021"
+  },
+  {
+    "imprint": "Storey Publishing",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Imprint of Workman Publishing (Hachette)"
+  },
+  {
+    "imprint": "Laurence King Publishing",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Acquired by Hachette UK in 2020"
+  },
+  {
+    "imprint": "Sterling Publishing",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Acquired by Hachette Book Group in 2024"
+  },
+  {
+    "imprint": "Welbeck Publishing",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Acquired by Hachette UK in 2022"
+  },
+  {
+    "imprint": "Octopus Publishing Group",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Division of Hachette UK"
+  },
+  {
+    "imprint": "Hamlyn",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Octopus Publishing Group (Hachette UK)"
+  },
+  {
+    "imprint": "Ilex Press",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Octopus Publishing Group (Hachette UK)"
+  },
+  {
+    "imprint": "Carlton Kids",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Carlton Books (Welbeck/Hachette) imprint"
+  },
+  {
+    "imprint": "Carlton Books, Limited",
+    "parent": "Hachette",
+    "confidence": "high",
+    "note": "Part of Welbeck, acquired by Hachette UK in 2022"
+  },
+  {
+    "imprint": "Aladdin",
+    "parent": "Simon & Schuster",
+    "confidence": "high",
+    "note": "S&S Children's Publishing imprint for ages 4-12"
+  },
+  {
+    "imprint": "Atheneum Books for Young Readers",
+    "parent": "Simon & Schuster",
+    "confidence": "high",
+    "note": "S&S Children's Publishing imprint"
+  },
+  {
+    "imprint": "Beach Lane Books",
+    "parent": "Simon & Schuster",
+    "confidence": "high",
+    "note": "S&S Children's Publishing picture book imprint"
+  },
+  {
+    "imprint": "Boynton Bookworks",
+    "parent": "Simon & Schuster",
+    "confidence": "high",
+    "note": "S&S Children's Publishing imprint (Sandra Boynton)"
+  },
+  {
+    "imprint": "Campbell Books",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan Children's Books imprint for ages 0-5"
+  },
+  {
+    "imprint": "Kingfisher",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Acquired by Pan Macmillan in 2007"
+  },
+  {
+    "imprint": "Pan",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Pan Books is an imprint of Pan Macmillan"
+  },
+  {
+    "imprint": "Boxtree",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Pan Macmillan imprint"
+  },
+  {
+    "imprint": "Priddy Books",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan Children's Publishing Group imprint"
+  },
+  {
+    "imprint": "Farrar, Straus and Giroux",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan US division (both owned by Holtzbrinck)"
+  },
+  {
+    "imprint": "Feiwel & Friends",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan Children's Publishing Group imprint"
+  },
+  {
+    "imprint": "Roaring Brook",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan Children's Publishing Group imprint"
+  },
+  {
+    "imprint": "First Second Books",
+    "parent": "Pan Macmillan",
+    "confidence": "high",
+    "note": "Macmillan Children's Publishing Group graphic novel imprint"
+  },
+  {
+    "imprint": "Chicken House",
+    "parent": "Scholastic",
+    "confidence": "high",
+    "note": "Acquired by Scholastic in 2005"
+  },
+  {
+    "imprint": "Cartwheel Books",
+    "parent": "Scholastic",
+    "confidence": "high",
+    "note": "Scholastic Trade Division imprint for ages 0-8"
+  },
+  {
+    "imprint": "Arthur A. Levine Books",
+    "parent": "Scholastic",
+    "confidence": "high",
+    "note": "Scholastic imprint (published Harry Potter in US)"
+  },
+  {
+    "imprint": "Wide Eyed Editions",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Quarto children's nonfiction imprint"
+  },
+  {
+    "imprint": "Words & Pictures",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Quarto children's imprint"
+  },
+  {
+    "imprint": "Qed Publishing",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Quarto children's imprint"
+  },
+  {
+    "imprint": "Frances Lincoln Children's Books",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Acquired by Quarto in 2011"
+  },
+  {
+    "imprint": "Lincoln Children's Books",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Same as Frances Lincoln Children's Books (Quarto)"
+  },
+  {
+    "imprint": "Moondance Press",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Quarto USA children's nonfiction imprint"
+  },
+  {
+    "imprint": "Quarto",
+    "parent": "Quarto Group",
+    "confidence": "high",
+    "note": "Parent brand"
+  },
+  {
+    "imprint": "Templar Books",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Bonnier children's novelty and illustrated books"
+  },
+  {
+    "imprint": "Big Picture Press",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Imprint of Templar (Bonnier)"
+  },
+  {
+    "imprint": "Piccadilly Press",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Bonnier Books UK children's imprint"
+  },
+  {
+    "imprint": "Hot Key Books",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Bonnier Books UK teen/YA imprint"
+  },
+  {
+    "imprint": "Bonnier Zaffre",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Bonnier Books UK fiction imprint"
+  },
+  {
+    "imprint": "Zaffre",
+    "parent": "Bonnier Books UK",
+    "confidence": "high",
+    "note": "Bonnier Books UK fiction imprint"
+  },
+  {
+    "imprint": "Zephyr",
+    "parent": "Bloomsbury",
+    "confidence": "high",
+    "note": "Children's imprint of Head of Zeus (Bloomsbury since 2021)"
+  },
+  {
+    "imprint": "Apollo",
+    "parent": "Bloomsbury",
+    "confidence": "high",
+    "note": "Head of Zeus (Bloomsbury since 2021)"
+  },
+  {
+    "imprint": "Amulet Books",
+    "parent": "Abrams",
+    "confidence": "high",
+    "note": "Abrams children's/middle-grade/YA fiction imprint"
+  },
+  {
+    "imprint": "Abramas Comicarts",
+    "parent": "Abrams",
+    "confidence": "high",
+    "note": "Abrams ComicArts graphic novel imprint (misspelled)"
+  },
+  {
+    "imprint": "Magic Cat",
+    "parent": "Abrams",
+    "confidence": "high",
+    "note": "Children's nonfiction imprint of Abrams"
+  },
+  {
+    "imprint": "Flying Eye Books",
+    "parent": "Nobrow Press",
+    "confidence": "high",
+    "note": "Children's imprint of Nobrow"
+  },
+  {
+    "imprint": "Little Gestalten",
+    "parent": "Die Gestalten Verlag",
+    "confidence": "high",
+    "note": "Children's imprint of gestalten"
+  },
+  {
+    "imprint": "Candlewick Press",
+    "parent": "Walker Books",
+    "confidence": "high",
+    "note": "US sister company of Walker Books UK"
+  },
+  {
+    "imprint": "Rock the Boat",
+    "parent": "Oneworld Publications",
+    "confidence": "high",
+    "note": "Oneworld's children's imprint"
+  },
+  {
+    "imprint": "Pushkin Children's Books",
+    "parent": "Pushkin Press",
+    "confidence": "high",
+    "note": "Pushkin Press children's imprint"
+  },
+  {
+    "imprint": "Alma Classics",
+    "parent": "Alma Books",
+    "confidence": "high",
+    "note": "Classics imprint of Alma Books"
+  },
+  {
+    "imprint": "Buster Books",
+    "parent": "Michael O'Mara Books",
+    "confidence": "high",
+    "note": "Children's imprint of Michael O'Mara"
+  },
+  {
+    "imprint": "Scribblers",
+    "parent": "Salariya Book Company",
+    "confidence": "high",
+    "note": "Children's imprint for ages 0-5"
+  },
+  {
+    "imprint": "Silver Dolphin Books",
+    "parent": "Printers Row Publishing",
+    "confidence": "high",
+    "note": "Printers Row (Readerlink) children's imprint"
+  },
+  {
+    "imprint": "Twirl",
+    "parent": "Chronicle Books",
+    "confidence": "medium",
+    "note": "Distributed by Chronicle; originates from Editions Tourbillon (France)"
+  }
+]

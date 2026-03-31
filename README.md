@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lightroom Workspace
 
-## Getting Started
+Internal bookstore workspace for:
 
-First, run the development server:
+- natural-language catalog search
+- inventory and sales lookup
+- order basket creation
+- distributor-grouped email drafts
+
+## Local development
+
+Use Node 20:
 
 ```bash
+nvm use 20
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local` with:
 
-## Learn More
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_WORKSPACE_MODEL=gpt-4.1
+SITE_PASSWORD=darkroom
+```
 
-To learn more about Next.js, take a look at the following resources:
+`SITE_PASSWORD` protects the site. In local development, if it is missing, the app falls back to `darkroom`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Catalog build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app reads:
 
-## Deploy on Vercel
+- `erp-data/Inventory - 30 Mar.xlsx`
+- `erp-data/sales jul to mar.xlsx`
+- `erp-data/Publisher - Distributor mapping - Sheet1.csv`
+- `Indian Stock Books.xlsx`
+- `data/imprint-mappings.json`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Build the catalog manually with:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build-catalog
+```
+
+`npm run build` already runs `npm run build-catalog` first, so Vercel builds stay in sync with the committed data and ERP files.
+
+## Vercel deployment
+
+This repo is set up for the simplest Vercel flow:
+
+1. Import the GitHub repo into Vercel
+2. Set environment variables:
+   - `SITE_PASSWORD=darkroom`
+   - `OPENAI_API_KEY=...`
+   - `OPENAI_WORKSPACE_MODEL=gpt-4.1`
+3. Deploy
+
+No custom build command is needed. Vercel will use the project `build` script.
+
+## Notes
+
+- The app is file-backed.
+- `data/master-catalog.json` is committed so the cleaned catalog is available on deploy.
+- Order drafts are persisted locally in development. On Vercel they are returned for copy/paste but not durably saved on the server.
