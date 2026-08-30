@@ -12,6 +12,8 @@ import { CatalogEntry, MasterCatalog } from '../lib/catalog-types';
 const ROOT = path.resolve(__dirname, '..');
 const CATALOG_PATH = path.join(ROOT, 'data', 'master-catalog.json');
 const MIN_DAYS_TO_JUDGE = 60;
+const IGNORE_STOCK_AT_OR_ABOVE = 40;
+const ESTIMATED_COST_SHARE_OF_MRP = 0.7;
 const AVERAGE_DAYS_PER_MONTH = 365.25 / 12;
 
 interface SalesTotals {
@@ -189,10 +191,21 @@ function main(): void {
   const firstSeenDates = readFirstSeenDates(paths.inventoryPath);
   const reportRows: MovementRow[] = [];
   const recentRows: MovementRow[] = [];
+  let ignoredBulkTitles = 0;
+  let ignoredBulkUnits = 0;
+  let ignoredBulkMrpValue = 0;
 
   for (const entry of Object.values(catalog.entries)) {
     const currentStock = Number(entry.currentStock) || 0;
     if (entry.scope !== 'book' || currentStock <= 0) continue;
+
+    if (currentStock >= IGNORE_STOCK_AT_OR_ABOVE) {
+      const mrp = Number(entry.mrp) || Number(entry.sellingPrice) || 0;
+      ignoredBulkTitles += 1;
+      ignoredBulkUnits += currentStock;
+      ignoredBulkMrpValue += currentStock * mrp;
+      continue;
+    }
 
     const sales = totals.get(entry.isbn) || { qtySold: 0, revenue: 0 };
     const firstSeen = firstSeenDates.get(entry.isbn);
@@ -247,6 +260,8 @@ function main(): void {
   recentRows.sort((left, right) => right.stockMrpValue - left.stockMrpValue);
 
   const highPriority = reportRows.filter(row => row.priority === 'High');
+  const highPriorityMrpValue = highPriority.reduce((sum, row) => sum + row.stockMrpValue, 0);
+  const estimatedRecoverableCapital = highPriorityMrpValue * ESTIMATED_COST_SHARE_OF_MRP;
   const summaryFor = (movement: MovementRow['movement']) => {
     const rows = reportRows.filter(row => row.movement === movement);
     return {
@@ -264,11 +279,15 @@ function main(): void {
     { Metric: 'Inventory snapshot', Value: path.basename(paths.inventoryPath) },
     { Metric: 'Sales period', Value: period.label },
     { Metric: 'Minimum observation period', Value: `${MIN_DAYS_TO_JUDGE} days` },
+    { Metric: 'Bulk-return exclusion', Value: `Titles with ${IGNORE_STOCK_AT_OR_ABOVE} or more units are ignored` },
+    { Metric: 'Ignored bulk-return titles / units / MRP value', Value: `${ignoredBulkTitles} / ${ignoredBulkUnits} / INR ${Math.round(ignoredBulkMrpValue).toLocaleString('en-IN')}` },
     { Metric: 'Non-moving definition', Value: 'In stock, observed for at least 60 days, zero units sold' },
     { Metric: 'Very slow definition', Value: 'At least 12 months of stock at observed sales rate' },
     { Metric: 'Slow definition', Value: '6 to under 12 months of stock at observed sales rate' },
     { Metric: 'High priority definition', Value: 'At least 5 copies or at least INR 3,000 stock MRP value' },
     { Metric: 'High-priority titles', Value: highPriority.length },
+    { Metric: 'High-priority stock MRP value', Value: `INR ${Math.round(highPriorityMrpValue).toLocaleString('en-IN')}` },
+    { Metric: 'Estimated capital tied up at 70% of MRP', Value: `INR ${Math.round(estimatedRecoverableCapital).toLocaleString('en-IN')}` },
     { Metric: 'Too new to judge', Value: recentRows.length },
     ...summary.map(item => ({
       Metric: `${item.movement} titles / units / MRP value`,
@@ -279,6 +298,7 @@ function main(): void {
   const outputStem = `slow-moving-books-${formatDate(period.end)}`;
   const xlsxPath = path.join(ROOT, 'data', `${outputStem}.xlsx`);
   const csvPath = path.join(ROOT, 'data', `${outputStem}.csv`);
+  const priorityCsvPath = path.join(ROOT, 'data', `high-priority-${outputStem}.csv`);
   const workbook = XLSX.utils.book_new();
   const summarySheet = XLSX.utils.json_to_sheet(summaryRows);
   summarySheet['!cols'] = [{ wch: 42 }, { wch: 78 }];
@@ -297,15 +317,20 @@ function main(): void {
 
   XLSX.writeFile(workbook, xlsxPath);
   fs.writeFileSync(csvPath, XLSX.utils.sheet_to_csv(XLSX.utils.json_to_sheet(toWorksheetRows(reportRows))));
+  fs.writeFileSync(priorityCsvPath, XLSX.utils.sheet_to_csv(XLSX.utils.json_to_sheet(toWorksheetRows(highPriority))));
 
   console.log(`Sales period: ${period.label}`);
   for (const item of summary) {
     console.log(`${item.movement}: ${item.titles} titles, ${item.units} units, INR ${Math.round(item.value).toLocaleString('en-IN')} MRP value`);
   }
   console.log(`High priority: ${highPriority.length} titles`);
+  console.log(`Ignored bulk returns: ${ignoredBulkTitles} titles, ${ignoredBulkUnits} units`);
+  console.log(`High-priority stock MRP value: INR ${Math.round(highPriorityMrpValue).toLocaleString('en-IN')}`);
+  console.log(`Estimated capital at 70% of MRP: INR ${Math.round(estimatedRecoverableCapital).toLocaleString('en-IN')}`);
   console.log(`Too new to judge: ${recentRows.length} titles`);
   console.log(`Saved: ${xlsxPath}`);
   console.log(`Saved: ${csvPath}`);
+  console.log(`Saved: ${priorityCsvPath}`);
 }
 
 main();
