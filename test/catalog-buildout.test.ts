@@ -260,6 +260,43 @@ test('buildCatalog retains known books missing from a partial inventory snapshot
   assert.equal(catalog.entries[retainedIsbn].revenue, 375);
 });
 
+test('buildCatalog sums stock across multiple ERP batch rows for the same ISBN', () => {
+  const isbn = '9789350465127';
+  const catalog = buildCatalog(
+    inventoryBuffer([
+      {
+        ItemCode: isbn,
+        Qty: 2,
+        Category: 'new',
+        Brand: 'Tulika',
+        Name: 'Gajapati Kulapati',
+        'Batch No': 'A',
+      },
+      {
+        ItemCode: isbn,
+        Qty: 1,
+        Category: 'new',
+        Brand: 'Tulika',
+        Name: 'Gajapati Kulapati',
+        'Batch No': 'B',
+      },
+      {
+        ItemCode: isbn,
+        Qty: 6,
+        Category: 'new',
+        Brand: 'Tulika',
+        Name: 'Gajapati Kulapati',
+        'Batch No': 'C',
+      },
+    ]),
+    salesBuffer([]),
+    indianStockBuffer([]),
+    null
+  );
+
+  assert.equal(catalog.entries[isbn].currentStock, 9);
+});
+
 test('buildCatalog preserves structured imprint fields across rebuilds', () => {
   const isbn = '9780143473060';
   const existing = makeCatalog([

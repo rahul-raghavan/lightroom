@@ -37,13 +37,15 @@ SITE_PASSWORD=darkroom
 The app reads:
 
 - the active inventory workbook in `erp-data/` whose filename contains `inventory`
-- `erp-data/sales jul to mar.xlsx`
+- the active sales workbook in `erp-data/` whose filename contains `sales`
 - `erp-data/Publisher - Distributor mapping - Sheet1.csv`
 - `Indian Stock Books.xlsx`
 - `data/imprint-mappings.json`
 
 Keep only the current inventory workbook directly inside `erp-data/`. Move older
 snapshots into `erp-data/archive/` so local and Vercel builds select the same file.
+Use the same approach for sales workbooks when the newer file replaces, rather
+than supplements, the previous reporting period.
 
 Build the catalog manually with:
 

@@ -129,18 +129,32 @@ export function buildCatalog(
     }
   }
 
-  // 4. Build entries from inventory
-  const entries: Record<string, CatalogEntry> = {};
-
+  // 4. Group inventory batches by ISBN. ERP exports one row per batch, so the
+  // current stock for a title is the sum of all eligible batch quantities.
+  const inventoryGroups = new Map<string, Record<string, unknown>[]>();
   for (const row of invData) {
     const isbn = String(row['ItemCode'] || '').trim();
     if (!isbn) continue;
 
     const qty = Number(row['Qty']) || 0;
-    if (qty < 0) continue; // skip negative qty
+    if (qty < 0) continue;
 
     const category = String(row['Category'] || '').trim();
     if (isSecondHandCategory(category)) continue;
+
+    const group = inventoryGroups.get(isbn) || [];
+    group.push(row);
+    inventoryGroups.set(isbn, group);
+  }
+
+  // 5. Build entries from grouped inventory
+  const entries: Record<string, CatalogEntry> = {};
+
+  for (const [isbn, rows] of inventoryGroups) {
+    const row = [...rows].reverse().find(candidate => (Number(candidate['Qty']) || 0) > 0)
+      || rows[rows.length - 1];
+    const qty = rows.reduce((sum, candidate) => sum + (Number(candidate['Qty']) || 0), 0);
+    const category = String(row['Category'] || '').trim();
 
     const rawBrand = String(row['Brand'] || '').trim();
     const subBrand = String(row['Sub Brand'] || '').trim();

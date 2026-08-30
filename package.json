@@ -12,6 +12,7 @@
     "reconcile-distributors": "tsx scripts/reconcile-distributor-mappings.ts",
     "lookup-publishers": "tsx scripts/lookup-publishers.ts",
     "lookup-tags": "tsx scripts/lookup-tags.ts",
+    "report-slow-movers": "tsx scripts/report-slow-movers.ts",
     "enrich-catalog": "tsx scripts/enrich-catalog.ts"
   },
   "dependencies": {
