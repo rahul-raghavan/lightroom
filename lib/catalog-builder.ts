@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as XLSX from 'xlsx';
 import { CatalogEntry, MasterCatalog, MetadataSource } from './catalog-types';
-import { getCatalogScope } from './catalog-scope';
+import { getCatalogScope, isSecondHandCategory } from './catalog-scope';
 import { applyKnownImprintMappings, ImprintMappingRecord, syncStructuredPublisherFields } from './catalog-imprints';
 import {
   applySelfDistributorMappings,
@@ -140,7 +140,7 @@ export function buildCatalog(
     if (qty < 0) continue; // skip negative qty
 
     const category = String(row['Category'] || '').trim();
-    if (category.toUpperCase() === 'SECOND HAND BOOKS') continue;
+    if (isSecondHandCategory(category)) continue;
 
     const rawBrand = String(row['Brand'] || '').trim();
     const subBrand = String(row['Sub Brand'] || '').trim();
@@ -263,6 +263,40 @@ export function buildCatalog(
     normalizeCatalogEntry(entry);
     syncStructuredPublisherFields(entry);
     entries[isbn] = entry;
+  }
+
+  // Inventory exports may contain only the current stock snapshot rather than
+  // every product ever cataloged. Keep known records searchable and mark items
+  // absent from the latest snapshot as out of stock.
+  if (existingCatalog) {
+    for (const [isbn, existing] of Object.entries(existingCatalog.entries)) {
+      if (entries[isbn]) continue;
+
+      const sale = salesMap.get(isbn);
+      const retained: CatalogEntry = {
+        ...existing,
+        currentStock: 0,
+        revenue: sale?.revenue || 0,
+        qtySold: sale?.qtySold || 0,
+        ...(existing.tagData
+          ? {
+              tagData: {
+                ...existing.tagData,
+                categories: [...existing.tagData.categories],
+                subjects: [...existing.tagData.subjects],
+                ...(existing.tagData.rawCategories
+                  ? { rawCategories: [...existing.tagData.rawCategories] }
+                  : {}),
+              },
+            }
+          : {}),
+        ...(cloneAliases(existing) ? { searchAliases: cloneAliases(existing) } : {}),
+      };
+
+      normalizeCatalogEntry(retained);
+      syncStructuredPublisherFields(retained);
+      entries[isbn] = retained;
+    }
   }
 
   return {

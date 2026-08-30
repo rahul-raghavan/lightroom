@@ -5,7 +5,6 @@ import {
   TagData,
 } from './catalog-types';
 import {
-  addSearchAlias,
   sanitizeTagData,
   setCanonicalAuthor,
   setCanonicalPublisher,

@@ -1,6 +1,7 @@
 import * as XLSX from 'xlsx';
 import { RawInventoryItem, RawSalesItem, InventoryItem, SalesItem } from './types';
 import { cleanPublisherName } from './publisher-cleaner';
+import { isSecondHandCategory } from './catalog-scope';
 
 export interface ParseResult<T> {
   data: T[];
@@ -37,7 +38,7 @@ export function parseInventoryFile(
 
     // Skip second-hand books — opportunistic inventory, not useful for restock analytics
     const category = String(row.Category || '').trim();
-    if (category.toUpperCase() === 'SECOND HAND BOOKS') {
+    if (isSecondHandCategory(category)) {
       skippedSecondHand++;
       continue;
     }

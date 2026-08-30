@@ -6,7 +6,7 @@ import test from 'node:test';
 import * as XLSX from 'xlsx';
 
 import { buildCatalog } from '../lib/catalog-builder';
-import { getCatalogScope } from '../lib/catalog-scope';
+import { getCatalogScope, isSecondHandCategory } from '../lib/catalog-scope';
 import {
   applyGoogleRateLimitState,
   applyResidualPublisherSuggestions,
@@ -128,6 +128,13 @@ test('getCatalogScope classifies valid books, products, and invalid codes', () =
   });
 });
 
+test('isSecondHandCategory handles ERP naming variants', () => {
+  assert.equal(isSecondHandCategory('SECOND HAND BOOKS'), true);
+  assert.equal(isSecondHandCategory('secondhand'), true);
+  assert.equal(isSecondHandCategory('Second-hand books'), true);
+  assert.equal(isSecondHandCategory('new'), false);
+});
+
 test('buildCatalog preserves accepted API author/publisher values across rebuilds', () => {
   const isbn = '9780143473060';
   const existing = makeCatalog([
@@ -205,6 +212,52 @@ test('buildCatalog preserves India ISBN-sourced metadata across rebuilds', () =>
   assert.equal(entry.authorSource, 'india-isbn');
   assert.equal(entry.publisher, 'Pratham Books');
   assert.equal(entry.publisherSource, 'india-isbn');
+});
+
+test('buildCatalog retains known books missing from a partial inventory snapshot at zero stock', () => {
+  const retainedIsbn = '9789353092511';
+  const currentIsbn = '9780143473060';
+  const existing = makeCatalog([
+    makeEntry({
+      isbn: retainedIsbn,
+      name: 'A Known Book',
+      author: 'Known Author',
+      publisher: 'Tulika',
+      currentStock: 7,
+      revenue: 250,
+      qtySold: 2,
+      tagData: {
+        ageGroup: 'Picture Book (3-6)',
+        categories: ['Fiction'],
+        subjects: ['Friendship'],
+        source: 'manual',
+        confidence: 'high',
+        taggedAt: '2026-03-29T00:00:00.000Z',
+      },
+    }),
+  ]);
+
+  const catalog = buildCatalog(
+    inventoryBuffer([{
+      ItemCode: currentIsbn,
+      Qty: 4,
+      Category: 'NEW',
+      Brand: 'Penguin',
+      'Sub Brand': 'Arundhati Roy',
+      Name: 'Mother Mary Comes to Me',
+    }]),
+    salesBuffer([{ 'Item Code': retainedIsbn, 'Quantity Sold': 3, 'Total': 375 }]),
+    indianStockBuffer([]),
+    existing
+  );
+
+  assert.equal(catalog.entries[currentIsbn].currentStock, 4);
+  assert.equal(catalog.entries[retainedIsbn].currentStock, 0);
+  assert.equal(catalog.entries[retainedIsbn].author, 'Known Author');
+  assert.equal(catalog.entries[retainedIsbn].publisher, 'Tulika');
+  assert.deepEqual(catalog.entries[retainedIsbn].tagData?.subjects, ['Friendship']);
+  assert.equal(catalog.entries[retainedIsbn].qtySold, 3);
+  assert.equal(catalog.entries[retainedIsbn].revenue, 375);
 });
 
 test('buildCatalog preserves structured imprint fields across rebuilds', () => {
